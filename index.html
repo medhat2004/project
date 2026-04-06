@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medhat Mohamed Portfolio</title>
 
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  padding: 40px;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.btn {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.section {
+  margin: 40px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background:#1e293b;
+  margin:10% auto;
+  padding:20px;
+  width:80%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="https://via.placeholder.com/150" class="profile-img">
+  <h1>Medhat Mohamed</h1>
+  <p>Data Analyst</p>
+
+  <a href="medhat_mohamed_cv.pdf" download>
+    <button class="btn">Download CV</button>
+  </a>
+</div>
+
+<div class="section">
+  <h2>Certificates</h2>
+
+  <div class="card" onclick="openModal('iti')">
+    ITI Certificate
+  </div>
+
+  <div class="card" onclick="openModal('ai')">
+    AI Certificate
+  </div>
+
+</div>
+
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+function openModal(type) {
+  let content = "";
+
+  if(type === 'iti'){
+    content = "<h2>ITI Certificate</h2><img src='https://via.placeholder.com/400'>";
+  }
+
+  if(type === 'ai'){
+    content = "<h2>AI Certificate</h2><img src='https://via.placeholder.com/400'>";
+  }
+
+  document.getElementById("modalContent").innerHTML = content;
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
